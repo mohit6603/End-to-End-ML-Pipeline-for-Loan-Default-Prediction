@@ -1,0 +1,249 @@
+/* ============================================================
+   LoanGuard AI — Premium Dark Theme Stylesheet
+   ============================================================
+   Uses glassmorphism, gradient accents, and the Inter typeface
+   for a polished, interview-ready look.
+   ============================================================ */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- Root variables ---------- */
+:root {
+    --bg-primary:    #0e1117;
+    --bg-secondary:  #161b22;
+    --bg-card:       rgba(255, 255, 255, 0.04);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary:  #e6edf3;
+    --text-muted:    #8b949e;
+    --accent-1:      #667eea;
+    --accent-2:      #764ba2;
+    --success:       #00d2ff;
+    --danger:        #ff416c;
+    --warning:       #f7971e;
+    --radius:        16px;
+    --transition:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Global ---------- */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* ---------- Main container ---------- */
+.stApp {
+    background: var(--bg-primary);
+}
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #13141a 0%, #1a1d29 100%);
+    border-right: 1px solid var(--border-subtle);
+}
+
+section[data-testid="stSidebar"] .stMarkdown h3 {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Glassmorphism card ---------- */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ---------- Metric card ---------- */
+.metric-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+}
+
+.metric-card:hover {
+    border-color: rgba(102, 126, 234, 0.35);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12);
+    transform: translateY(-3px);
+}
+
+.metric-card .metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.3rem 0;
+}
+
+.metric-card .metric-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2)) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.4) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+}
+
+/* ---------- Form inputs ---------- */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div,
+.stMultiSelect > div > div {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 10px !important;
+    color: var(--text-primary) !important;
+    transition: var(--transition) !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus {
+    border-color: var(--accent-1) !important;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* ---------- Slider ---------- */
+.stSlider > div > div > div > div {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2)) !important;
+}
+
+/* ---------- Tabs ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2)) !important;
+    color: white !important;
+}
+
+/* ---------- Dataframe / table ---------- */
+.stDataFrame {
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* ---------- Expander ---------- */
+.streamlit-expanderHeader {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+/* ---------- Divider ---------- */
+hr {
+    border-color: var(--border-subtle) !important;
+}
+
+/* ---------- Risk badges ---------- */
+.risk-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+}
+
+.risk-low    { background: rgba(0, 210, 255, 0.15); color: var(--success); border: 1px solid rgba(0, 210, 255, 0.3); }
+.risk-medium { background: rgba(247, 151, 30, 0.15); color: var(--warning); border: 1px solid rgba(247, 151, 30, 0.3); }
+.risk-high   { background: rgba(255, 65, 108, 0.15); color: var(--danger); border: 1px solid rgba(255, 65, 108, 0.3); }
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ---------- Gradient heading utility ---------- */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* ---------- Success / error alerts ---------- */
+.stAlert {
+    border-radius: 12px !important;
+}
+
+/* ---------- Progress bar ---------- */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2)) !important;
+}
+
+/* ---------- Page navigation links in sidebar ---------- */
+section[data-testid="stSidebar"] a {
+    transition: var(--transition);
+}
+
+section[data-testid="stSidebar"] a:hover {
+    color: var(--accent-1) !important;
+}
