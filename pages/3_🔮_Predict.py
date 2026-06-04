@@ -218,10 +218,10 @@ if st.button("🔮 Predict Default Risk", use_container_width=True, type="primar
             <div style="
                 text-align:center; padding:2rem 1rem;
                 border-radius:16px;
-                background: rgba(255,255,255,0.04);
+                background: #f8f9fc;
                 border: 2px solid {color};
             ">
-                <p style="font-size:1.1rem; color:#8b949e; margin-bottom:0.3rem;">
+                <p style="font-size:1.1rem; color:#64748b; margin-bottom:0.3rem;">
                     Risk Level
                 </p>
                 <h2 style="color:{color}; font-size:2.2rem; margin:0;">
@@ -230,11 +230,11 @@ if st.button("🔮 Predict Default Risk", use_container_width=True, type="primar
                 <p style="font-size:2.5rem; margin:0.5rem 0;">
                     {"✅" if prediction == 0 else "⚠️"}
                 </p>
-                <p style="color:#e6edf3; font-size:1.05rem;">
+                <p style="color:#1a202c; font-size:1.05rem;">
                     {"Loan is likely to be <b>Fully Paid</b>" if prediction == 0
                      else "Loan is likely to <b>Default</b>"}
                 </p>
-                <p style="color:#8b949e; font-size:0.9rem; margin-top:0.6rem;">
+                <p style="color:#64748b; font-size:0.9rem; margin-top:0.6rem;">
                     Default Probability: <b>{probability:.1%}</b>
                 </p>
             </div>

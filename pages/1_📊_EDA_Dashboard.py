@@ -116,8 +116,8 @@ with col_desc:
     st.markdown(
         """
         <div class="glass-card" style="margin-top:1rem;">
-            <h4 style="color:#e6edf3;">Insight</h4>
-            <p style="color:#8b949e; line-height:1.8;">
+            <h4 style="color:#1a202c;">Insight</h4>
+            <p style="color:#64748b; line-height:1.8;">
                 The dataset has a ~<b>20 % default rate</b>, which is typical for
                 sub-prime lending portfolios.  This class imbalance is why we
                 apply <b>SMOTE</b> during training and use <b>balanced class
@@ -180,8 +180,8 @@ else:
 st.markdown(
     """
     <div class="glass-card">
-        <h4 style="color:#e6edf3;">Key Correlations</h4>
-        <ul style="color:#8b949e; line-height:1.9;">
+        <h4 style="color:#1a202c;">Key Correlations</h4>
+        <ul style="color:#64748b; line-height:1.9;">
             <li><code>int_rate</code> ↔ <code>loan_status</code>: Higher interest rates strongly
                 correlate with defaults — riskier borrowers are charged more.</li>
             <li><code>fico_score</code> ↔ <code>loan_status</code>: Lower FICO = higher default risk.</li>
@@ -221,7 +221,7 @@ cat_tab_grade, cat_tab_purpose, cat_tab_home = st.tabs(["By Grade", "By Purpose"
 import plotly.express as px
 
 _LAYOUT = dict(
-    template="plotly_dark",
+    template="plotly_white",
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)",
 )

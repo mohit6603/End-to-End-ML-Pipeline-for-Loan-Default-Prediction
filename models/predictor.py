@@ -62,10 +62,10 @@ def predict_loan_default(
 def get_prediction_color(risk_level: str) -> str:
     """Map risk level to a hex colour for UI badges / gauges."""
     return {
-        "Low Risk": "#00d2ff",      # cyan / safe
-        "Medium Risk": "#f7971e",   # amber / caution
-        "High Risk": "#ff416c",     # red / danger
-    }.get(risk_level, "#888888")
+        "Low Risk": "#059669",      # green / safe
+        "Medium Risk": "#d97706",   # amber / caution
+        "High Risk": "#dc2626",     # red / danger
+    }.get(risk_level, "#64748b")
 
 
 # ========================== PRIVATE =========================================

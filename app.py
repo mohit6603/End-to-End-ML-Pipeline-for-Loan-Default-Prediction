@@ -57,7 +57,7 @@ if not st.session_state.authenticated:
             <h1 class="gradient-text" style="font-size:3.2rem; margin-bottom:0.2rem;">
                 🏦 LoanGuard AI
             </h1>
-            <p style="color:#8b949e; font-size:1.25rem; margin-top:0;">
+            <p style="color:#64748b; font-size:1.25rem; margin-top:0;">
                 Intelligent Loan Default Prediction System
             </p>
         </div>
@@ -72,8 +72,8 @@ if not st.session_state.authenticated:
         st.markdown(
             """
             <div class="glass-card" style="margin-top:1rem;">
-                <h3 style="color:#e6edf3;">Why LoanGuard AI?</h3>
-                <ul style="color:#8b949e; line-height:2;">
+                <h3 style="color:#1a202c;">Why LoanGuard AI?</h3>
+                <ul style="color:#64748b; line-height:2;">
                     <li>🔬 <b>ML-Powered</b> — XGBoost + Logistic Regression</li>
                     <li>📊 <b>Interactive EDA</b> — explore 10 000+ loan records</li>
                     <li>⚡ <b>Real-Time Predictions</b> — instant risk scoring</li>
@@ -184,8 +184,8 @@ else:
         st.markdown(
             """
             <div class="glass-card">
-                <h4 style="color:#667eea;">Step 1 — Explore</h4>
-                <p style="color:#8b949e;">
+                <h4 style="color:#4f46e5;">Step 1 — Explore</h4>
+                <p style="color:#64748b;">
                     Dive into 10,000+ synthetic loan records. Understand distributions,
                     correlations, and default patterns through interactive charts.
                 </p>
@@ -197,8 +197,8 @@ else:
         st.markdown(
             """
             <div class="glass-card">
-                <h4 style="color:#764ba2;">Step 2 — Train</h4>
-                <p style="color:#8b949e;">
+                <h4 style="color:#7c3aed;">Step 2 — Train</h4>
+                <p style="color:#64748b;">
                     Train Logistic Regression and XGBoost models with SMOTE resampling.
                     Compare ROC curves, confusion matrices, and feature importances.
                 </p>
@@ -210,8 +210,8 @@ else:
         st.markdown(
             """
             <div class="glass-card">
-                <h4 style="color:#00d2ff;">Step 3 — Predict</h4>
-                <p style="color:#8b949e;">
+                <h4 style="color:#059669;">Step 3 — Predict</h4>
+                <p style="color:#64748b;">
                     Enter borrower details and receive instant default probability
                     with a risk level badge. Every prediction is saved for audit.
                 </p>

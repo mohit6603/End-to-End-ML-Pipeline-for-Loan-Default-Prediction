@@ -1,17 +1,16 @@
 """
 visualization.py — Reusable Plotly / Seaborn chart functions.
 
-All Plotly figures use `plotly_dark` template with a consistent colour palette
-so they match the app's dark-themed CSS.  Matplotlib/Seaborn charts are styled
-with a dark background for visual consistency.
+All Plotly figures use `plotly_white` template with a consistent colour palette.
+Matplotlib/Seaborn charts are styled with a light background for visual consistency.
 
 Colour palette
 --------------
-  primary   = #667eea  (indigo)
-  secondary = #764ba2  (purple)
-  success   = #00d2ff  (cyan)
-  danger    = #ff416c  (red)
-  warning   = #f7971e  (amber)
+   primary   = #4f46e5  (indigo)
+   secondary = #7c3aed  (purple)
+   success   = #059669  (green)
+   danger    = #dc2626  (red)
+   warning   = #d97706  (amber)
 """
 
 from __future__ import annotations
@@ -31,17 +30,17 @@ from sklearn.metrics import roc_curve, auc
 
 # ========================== COLOUR PALETTE ==================================
 
-PRIMARY   = "#667eea"
-SECONDARY = "#764ba2"
-SUCCESS   = "#00d2ff"
-DANGER    = "#ff416c"
-WARNING   = "#f7971e"
+PRIMARY   = "#4f46e5"
+SECONDARY = "#7c3aed"
+SUCCESS   = "#059669"
+DANGER    = "#dc2626"
+WARNING   = "#d97706"
 
-PALETTE = [PRIMARY, SECONDARY, SUCCESS, DANGER, WARNING, "#a18cd1", "#fbc2eb"]
+PALETTE = [PRIMARY, SECONDARY, SUCCESS, DANGER, WARNING, "#0ea5e9", "#ec4899"]
 
 # Plotly layout defaults shared across all figures
 _LAYOUT_DEFAULTS = dict(
-    template="plotly_dark",
+    template="plotly_white",
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)",
     font=dict(family="Inter, sans-serif"),
@@ -88,16 +87,16 @@ def plot_correlation_heatmap(df: pd.DataFrame) -> plt.Figure:
     corr = numeric_df.corr()
 
     fig, ax = plt.subplots(figsize=(12, 9))
-    fig.patch.set_facecolor("#0e1117")
-    ax.set_facecolor("#0e1117")
+    fig.patch.set_facecolor("#ffffff")
+    ax.set_facecolor("#ffffff")
 
     sns.heatmap(
         corr, annot=True, fmt=".2f", cmap="coolwarm",
         linewidths=0.5, ax=ax, cbar_kws={"shrink": 0.8},
-        annot_kws={"size": 8, "color": "white"},
+        annot_kws={"size": 8, "color": "#1a202c"},
     )
-    ax.tick_params(colors="white")
-    ax.set_title("Feature Correlation Matrix", color="white", fontsize=16, pad=15)
+    ax.tick_params(colors="#1a202c")
+    ax.set_title("Feature Correlation Matrix", color="#1a202c", fontsize=16, pad=15)
     plt.tight_layout()
     return fig
 
@@ -158,20 +157,20 @@ def plot_roc_curve(models_dict: dict[str, Any], X_test, y_test) -> go.Figure:
 def plot_confusion_matrix(cm: np.ndarray, model_name: str) -> plt.Figure:
     """Annotated heatmap of the confusion matrix."""
     fig, ax = plt.subplots(figsize=(6, 5))
-    fig.patch.set_facecolor("#0e1117")
-    ax.set_facecolor("#0e1117")
+    fig.patch.set_facecolor("#ffffff")
+    ax.set_facecolor("#ffffff")
 
     sns.heatmap(
         cm, annot=True, fmt="d", cmap="Blues",
         xticklabels=["No Default", "Default"],
         yticklabels=["No Default", "Default"],
-        ax=ax, linewidths=1, linecolor="#333",
+        ax=ax, linewidths=1, linecolor="#e2e8f0",
         annot_kws={"size": 16, "weight": "bold"},
     )
-    ax.set_xlabel("Predicted", color="white", fontsize=12)
-    ax.set_ylabel("Actual", color="white", fontsize=12)
-    ax.set_title(f"{model_name} — Confusion Matrix", color="white", fontsize=14, pad=12)
-    ax.tick_params(colors="white")
+    ax.set_xlabel("Predicted", color="#1a202c", fontsize=12)
+    ax.set_ylabel("Actual", color="#1a202c", fontsize=12)
+    ax.set_title(f"{model_name} — Confusion Matrix", color="#1a202c", fontsize=14, pad=12)
+    ax.tick_params(colors="#1a202c")
     plt.tight_layout()
     return fig
 
@@ -184,7 +183,7 @@ def plot_feature_importance(importance_df: pd.DataFrame, top_n: int = 15) -> go.
         top, x="importance", y="feature", orientation="h",
         title=f"Top {top_n} Feature Importances",
         color="importance",
-        color_continuous_scale=["#764ba2", "#667eea", "#00d2ff"],
+        color_continuous_scale=["#7c3aed", "#4f46e5", "#0ea5e9"],
     )
     fig.update_layout(**_LAYOUT_DEFAULTS)
     fig.update_coloraxes(showscale=False)
@@ -198,8 +197,8 @@ def plot_probability_gauge(probability: float) -> go.Figure:
     fig = go.Figure(go.Indicator(
         mode="gauge+number+delta",
         value=probability * 100,
-        number={"suffix": "%", "font": {"size": 48, "color": "white"}},
-        title={"text": "Default Probability", "font": {"size": 20, "color": "#aaa"}},
+        number={"suffix": "%", "font": {"size": 48, "color": "#1a202c"}},
+        title={"text": "Default Probability", "font": {"size": 20, "color": "#64748b"}},
         gauge={
             "axis": {"range": [0, 100], "tickwidth": 2, "tickcolor": "#555"},
             "bar": {"color": SECONDARY},
@@ -207,9 +206,9 @@ def plot_probability_gauge(probability: float) -> go.Figure:
             "borderwidth": 2,
             "bordercolor": "#333",
             "steps": [
-                {"range": [0, 30], "color": "rgba(0,210,255,0.25)"},
-                {"range": [30, 60], "color": "rgba(247,151,30,0.25)"},
-                {"range": [60, 100], "color": "rgba(255,65,108,0.25)"},
+                {"range": [0, 30], "color": "rgba(5,150,105,0.15)"},
+                {"range": [30, 60], "color": "rgba(217,119,6,0.15)"},
+                {"range": [60, 100], "color": "rgba(220,38,38,0.15)"},
             ],
             "threshold": {
                 "line": {"color": DANGER, "width": 4},

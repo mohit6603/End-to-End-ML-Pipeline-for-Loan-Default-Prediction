@@ -227,8 +227,8 @@ else:
         """
         <div class="glass-card" style="text-align:center; padding:3rem;">
             <div style="font-size:3rem;">🤖</div>
-            <h3 style="color:#e6edf3;">No Models Trained Yet</h3>
-            <p style="color:#8b949e;">
+            <h3 style="color:#1a202c;">No Models Trained Yet</h3>
+            <p style="color:#64748b;">
                 Click the <b>Train Models</b> button above to train
                 Logistic Regression and XGBoost classifiers.
             </p>
